@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Custom Order</title>
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">Secure Jewellery Management</div>
+        <div class="navbar-menu">
+            <a href="/dashboard.html" class="navbar-link">My Orders</a>
+            <a href="/custom-order.html" class="navbar-link">New Custom Order</a>
+            <a href="/order-tracking.html" class="navbar-link">Track Order</a>
+            <button class="btn-logout" id="logout-btn">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">Create Custom Jewellery Order</div>
+
+            <form id="order-form">
+                <div class="grid grid-2">
+                    <div class="form-group">
+                        <label for="jewellery_type">Jewellery Type *</label>
+                        <select id="jewellery_type" name="jewellery_type" class="form-control" required>
+                            <option value="">Select Type</option>
+                            <option value="Ring">Ring</option>
+                            <option value="Necklace">Necklace</option>
+                            <option value="Bracelet">Bracelet</option>
+                            <option value="Earrings">Earrings</option>
+                            <option value="Pendant">Pendant</option>
+                            <option value="Brooch">Brooch</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="material">Material *</label>
+                        <select id="material" name="material" class="form-control" required>
+                            <option value="">Select Material</option>
+                            <option value="Gold (24K)">Gold (24K)</option>
+                            <option value="Gold (22K)">Gold (22K)</option>
+                            <option value="Gold (18K)">Gold (18K)</option>
+                            <option value="White Gold">White Gold</option>
+                            <option value="Rose Gold">Rose Gold</option>
+                            <option value="Platinum">Platinum</option>
+                            <option value="Silver (925)">Silver (925)</option>
+                            <option value="Diamond">Diamond</option>
+                            <option value="Mixed">Mixed Materials</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-2">
+                    <div class="form-group">
+                        <label for="budget">Budget (USD) *</label>
+                        <input type="number" id="budget" name="budget" class="form-control"
+                               placeholder="Enter your budget" min="100" step="50" required>
+                        <div class="form-help">Minimum budget: $100</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="required_date">Required Date *</label>
+                        <input type="date" id="required_date" name="required_date" class="form-control" required>
+                        <div class="form-help">When do you need it?</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description / Notes *</label>
+                    <textarea id="description" name="description" class="form-control"
+                              placeholder="Describe your custom jewellery requirements in detail..." required></textarea>
+                    <div class="form-help">Provide detailed specifications, preferences, and any special requirements</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="design_file">Design File (Optional)</label>
+                    <input type="file" id="design_file" name="design_file" class="form-control"
+                           accept="image/jpeg,image/png,image/jpg,application/pdf">
+                    <div class="form-help">Upload design reference (JPG, PNG, or PDF, max 5MB)</div>
+                    <div id="file-error" class="form-error hidden"></div>
+                    <img id="image-preview" class="image-preview hidden" alt="Preview">
+                </div>
+
+                <div class="flex flex-gap mt-3">
+                    <button type="submit" class="btn btn-primary">Submit Order</button>
+                    <a href="/dashboard.html" class="btn btn-secondary">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="/src/custom-order.js"></script>
+</body>
+</html>

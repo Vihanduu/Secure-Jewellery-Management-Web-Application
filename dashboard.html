@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">Secure Jewellery Management</div>
+        <div class="navbar-menu">
+            <a href="/dashboard.html" class="navbar-link">My Orders</a>
+            <a href="/custom-order.html" class="navbar-link">New Custom Order</a>
+            <a href="/order-tracking.html" class="navbar-link">Track Order</a>
+            <button class="btn-logout" id="logout-btn">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">My Custom Jewellery Orders</div>
+
+            <div class="mb-3">
+                <a href="/custom-order.html" class="btn btn-primary">Create New Custom Order</a>
+            </div>
+
+            <div id="loading" class="spinner"></div>
+            <div id="orders-container"></div>
+        </div>
+    </div>
+
+    <script type="module" src="/src/dashboard.js"></script>
+</body>
+</html>

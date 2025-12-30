@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard</title>
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">Secure Jewellery Management - Manager</div>
+        <div class="navbar-menu">
+            <a href="/manager-dashboard.html" class="navbar-link">Pending Orders</a>
+            <button class="btn-logout" id="logout-btn">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">Pending Custom Order Approvals</div>
+
+            <div id="loading" class="spinner"></div>
+            <div id="orders-container"></div>
+        </div>
+    </div>
+
+    <!-- Approval Modal -->
+    <div id="approval-modal" class="modal hidden" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; align-items: center; justify-content: center;">
+        <div class="modal-content" style="background: var(--bg-card); padding: 2rem; border-radius: 8px; max-width: 600px; width: 90%; max-height: 90vh; overflow-y: auto;">
+            <h3 class="card-header" id="modal-title">Review Order</h3>
+
+            <div id="modal-order-details" class="mb-3"></div>
+
+            <div class="form-group">
+                <label for="manager-comment">Manager Comment *</label>
+                <textarea id="manager-comment" class="form-control" placeholder="Add your feedback or comments..." required></textarea>
+            </div>
+
+            <div class="flex flex-gap">
+                <button id="approve-btn" class="btn btn-success">Approve</button>
+                <button id="reject-btn" class="btn btn-danger">Reject</button>
+                <button id="close-modal-btn" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/src/manager-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking</title>
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">Secure Jewellery Management</div>
+        <div class="navbar-menu">
+            <a href="/dashboard.html" class="navbar-link">My Orders</a>
+            <a href="/custom-order.html" class="navbar-link">New Custom Order</a>
+            <a href="/order-tracking.html" class="navbar-link">Track Order</a>
+            <button class="btn-logout" id="logout-btn">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">Order Tracking</div>
+
+            <div id="loading" class="spinner"></div>
+            <div id="order-container"></div>
+        </div>
+    </div>
+
+    <script type="module" src="/src/order-tracking.js"></script>
+</body>
+</html>
